@@ -1,11 +1,13 @@
 defmodule Cards do
   @moduledoc """
     Provides methods for creating and handling a deck of cards.
+
   """
 
   @spec create_deck :: [String.t()]
   @doc """
     Returns a list of strings, representing a deck of playing cards.
+
   """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
@@ -22,6 +24,18 @@ defmodule Cards do
   end
 
   @spec contains?([String.t()], String.t()) :: boolean
+  @doc """
+    Determines whether a deck contains a given card.
+
+  ## Examples
+
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+      iex> Cards.contains?(deck, "Not a card")
+      false
+
+  """
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
